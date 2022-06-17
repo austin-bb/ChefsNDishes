@@ -1,0 +1,24 @@
+@model List<Dish>
+
+<partial name="_Nav"></partial>
+<a href="/dishes/new">Add Dish</a>
+
+<table class="table w-50 m-5">
+  <thead>
+    <th>Name</th>
+    <th>Chef</th>
+    <th>Tastiness</th>
+    <th>Calories</th>
+  </thead>
+  <tbody>
+    @foreach (Dish dish in Model)
+    {
+      <tr>
+        <td>@dish.DishName</td>
+        <td>@dish.Author.FName @dish.Author.LName</td>
+        <td>@dish.Tastiness</td>
+        <td>@dish.Calories</td>
+      </tr>
+    }
+  </tbody>
+</table>

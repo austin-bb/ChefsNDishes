@@ -1,0 +1,23 @@
+@model List<Chef>
+
+<partial name="_Nav"></partial>
+
+<a href="/chefs/new">Add Chef</a>
+
+<table class="table w-50 m-5"
+  <thead>
+    <th>Name</th>
+    <th>Age</th>
+    <th># of Dishes</th>
+  </thead>
+  <tbody>
+    @foreach (Chef chef in Model)
+    {
+      <tr>
+        <td>@chef.FName @chef.LName</td>
+        <td>@chef.Age(@chef.DOB)</td>
+        <td>@chef.Dishes.Count()</td>
+      </tr>
+    }
+  </tbody>
+</table>
