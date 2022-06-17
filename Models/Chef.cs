@@ -29,10 +29,10 @@ using System.ComponentModel.DataAnnotations;
     
     
     
-    public int Age(DateTime dob)
+    public int Age()
     {
       var today = DateTime.Today;
-      var age = today.Year - dob.Year;
+      var age = today.Year - this.DOB.Year;
       
       return age;
     }
